@@ -30,7 +30,8 @@ with open('budgetdata.csv') as csvfile:
         pnl.append(row['Profit/Losses'])
         # Change list of string to integer
         total = (map(int, pnl))
-        # Calculating change of every month and add to list
+
+        # Calculating change of every month and add to list (Note: Broken)
         change = pnl - priorrow
         changelist.append(change)
         # Add next row P&L value to a list
@@ -42,6 +43,8 @@ with open('budgetdata.csv') as csvfile:
 # Print results
 print('Total Months:', len(month))
 print('Total: $', sum(total))
+
+# Broken
 print('Average Change: $', float(sum(changelist))/len(changelist))
 print('Greatest Increase in Profits:', max(changelist)) # Note: not sure how to get the corresponding month
 print('Greatest Decrease in Profits:', min(changelist)) # Note: not sure how to get the corresponding month
