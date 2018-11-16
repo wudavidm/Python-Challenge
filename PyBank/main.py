@@ -39,12 +39,27 @@ with open('budgetdata.csv') as csvfile:
         # Calculation for avg change
         avg = float(sum(changelist))/len(changelist)
 
+    # Calculations
+        totalmonth = len(month)
+    totalmoney = sum(total)
+    avgchange = float(sum(changelist))/len(changelist)
+    best = max(changelist)
+    worst = min(changelist)
 
 # Print results
-print('Total Months:', len(month))
-print('Total: $', sum(total))
-
+print('Total Months:', totalmonth)
+print('Total: $', totalmoney)
 # Broken
-print('Average Change: $', float(sum(changelist))/len(changelist))
-print('Greatest Increase in Profits:', max(changelist)) # Note: not sure how to get the corresponding month
-print('Greatest Decrease in Profits:', min(changelist)) # Note: not sure how to get the corresponding month
+print('Average Change: $', avgchange)
+print('Greatest Increase in Profits: $', best) # Note: not sure how to get the corresponding month
+print('Greatest Decrease in Profits: $', worst) # Note: not sure how to get the corresponding month
+
+# Write to text file
+with open('pybankmain.txt', 'w') as f:
+    f.write('"Total Months:", totalmonth\n')
+    f.write('"Total: $", totalmoney\n')
+    f.write('"Average Change: $", avgchange\n')
+    f.write('"Greatest Increase in Profits: $", best\n')
+    f.write('"Greatest Decrease in Profits: $", worst\n')
+
+
