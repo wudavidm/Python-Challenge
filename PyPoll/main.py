@@ -55,3 +55,13 @@ print('Correy:', "{:.1%}".format(pc), correy)
 print('Li:', "{:.1%}".format(pl), li)
 print("O'Tooley", "{:.1%}".format(po), otooley)
 print(max(percent, key=percent.get))
+
+
+# Write to text file
+with open('pypollmain.txt', 'w') as f:
+    f.write('"Total Votes:", len(votes)\n')
+    f.write('"Khan:", "{:.1%}".format(pk), khan\n')
+    f.write('"Correy:", "{:.1%}".format(pc), correy\n')
+    f.write('"Li:", "{:.1%}".format(pl), li\n')
+    f.write('"OTooley", "{:.1%}".format(po), otooley\n')
+    f.write('max(percent, key=percent.get)\n')
